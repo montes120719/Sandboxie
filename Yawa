@@ -1,0 +1,8 @@
+@Dao
+public interface MusicDao {
+    @Delete
+    public fun deleteSongs(vararg songs: Song)
+
+    @Delete
+    public fun deleteAlbumAndSongs(album: Album, songs: List<Song>)
+}
