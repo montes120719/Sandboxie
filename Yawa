@@ -1,0 +1,14 @@
+suspend fun deleteStepsByUniqueIdentifier(
+    healthConnectClient: HealthConnectClient,
+    idList: List<String>
+) {
+    try {
+        healthConnectClient.deleteRecords(
+            StepsRecord::class,
+            idList = idList,
+            clientRecordIdsList = emptyList()
+        )
+    } catch (e: Exception) {
+        // Run error handling here
+    }
+}
