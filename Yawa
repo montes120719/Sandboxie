@@ -1,0 +1,14 @@
+suspend fun deleteStepsByTimeRange(
+    healthConnectClient: HealthConnectClient,
+    startTime: Instant,
+    endTime: Instant
+) {
+    try {
+        healthConnectClient.deleteRecords(
+            StepsRecord::class,
+            timeRangeFilter = TimeRangeFilter.between(startTime, endTime)
+        )
+    } catch (e: Exception) {
+        // Run error handling here
+    }
+}
